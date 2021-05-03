@@ -22,7 +22,7 @@ exports.add = (req, res, next) => {
 };
 
 exports.update = (req, res, next) => {
-    const id = req.query.id;
+    const id = req.body.id;
     const fname = req.body.fname;
     const lname = req.body.lname;
     const phone = req.body.phone;
