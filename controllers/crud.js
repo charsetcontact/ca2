@@ -29,20 +29,22 @@ exports.update = (req, res, next) => {
     const address = req.body.address;
     Data.get(id)
     .then(data => {
-        if(data && data.lenght > 0){
+        const updateddata = new Data(data.fname, data.lname, data.phone, data.address, data._id);
+        if(data){
             if(fname){
-                data.fname = fname;
+                updateddata.fname = fname;
             }
             if(lname){
-                data.lname = lname;
+                updateddata.lname = lname;
             }
             if(phone){
-                data.phone = phone;
+                updateddata.phone = phone;
             }
             if(address){
-                data.address = address;
+                updateddata.address = address;
             }
-            return data.update();
+            console.log("here2");
+            return updateddata.update();
         }
     })
     .then(result => {
