@@ -43,7 +43,6 @@ exports.update = (req, res, next) => {
             if(address){
                 updateddata.address = address;
             }
-            console.log("here2");
             return updateddata.update();
         }
     })
